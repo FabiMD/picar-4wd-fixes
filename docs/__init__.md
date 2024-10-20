@@ -1,11 +1,11 @@
-# picar_4wd.__intit__ - basic driver
+# picar_4wd.__init__ - basic driver
 
 Usage:
 ```python
 from picar_4wd import *
 
 gs_list = []
-picar_4wd_speed = 0
+picar_4wd_speed = 0     
 
 forward(50)               #set up the forward speed
 
