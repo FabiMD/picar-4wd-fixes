@@ -56,7 +56,7 @@ In the code, we use readchar and readkey to get the input state of the key, then
         c3 = getchar()
         return chr(0x10 + ord(c3) - 65)
 
-    def Keyborad_control():
+    def Keyboard_control():
         while True:
             global power_val
             key=readkey()
@@ -82,7 +82,7 @@ In the code, we use readchar and readkey to get the input state of the key, then
                 print("quit")  
                 break  
     if __name__ == '__main__':
-        Keyborad_control()
+        Keyboard_control()
     
 
 obstacle_avoidance.py
