@@ -13,7 +13,7 @@ responseWebsocket.connect = function () {
         console.log(event)
         
         Manual.mileage(JSON.parse(event["data"])['MS'])
-        // 设置巡线的数值
+      // Set the line-following value
         Manual.setSpeedScale(JSON.parse(event["data"]));
         if (Setting.grayscale.show) {
             Setting.grayscale.setColor(JSON.parse(event["data"]));
@@ -25,7 +25,7 @@ responseWebsocket.connect = function () {
         }
         Setting.system.setValue(JSON.parse(event["data"]))
     
-        // 速度
+        // Speed
         Manual.lastSpeedValue = JSON.parse(event["data"])['MS']
         Manual.setSpeedValue(JSON.parse(event["data"]));
         if (Manual.ultrasonicFlag == 'on') {

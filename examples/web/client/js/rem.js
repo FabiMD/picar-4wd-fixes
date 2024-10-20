@@ -2,7 +2,7 @@
 //     var docEl = doc.documentElement,
 //         isIOS = navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
 //         dpr = isIOS ? Math.min(win.devicePixelRatio, 3) : 1,
-//         dpr = window.top === window.self ? dpr : 1, //被iframe引用时，禁止缩放
+//         dpr = window.top === window.self ? dpr : 1, // When referenced by an iframe, disable scaling
 //         dpr = 1,
 //         scale = 1 / dpr,
 //         resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
@@ -16,13 +16,14 @@
 //         if (width / dpr > 750) {
 //             width = 750 * dpr;
 //         }
-//         // 乘以100，px : rem = 100 : 1
+//         // Multiply by 100, px : rem = 100 : 1
 //         docEl.style.fontSize = 100 * (width / 1340) + 'px';
 //     };
 //     recalc()
 //     if (!doc.addEventListener) return;
 //     win.addEventListener(resizeEvt, recalc, false);
 // })(document, window);
+
 
 ;(function (designWidth, maxWidth) {
     var doc = document,
@@ -40,9 +41,9 @@
         if (width > maxWidth) {
             width = maxWidth;
         }
-        //与淘宝做法不同，直接采用简单的rem换算方法1rem=100px
+        // Unlike Taobao's approach, directly using a simple rem conversion method 1rem = 100px
         var rem = width * 100 / designWidth;
-        //兼容UC开始
+        // UC browser compatibility start
         rootStyle = "html{font-size:" + rem + 'px !important}';
         rootItem = document.getElementById('rootsize') || document.createElement("style");
         if (!document.getElementById('rootsize')) {
@@ -58,18 +59,18 @@
                 rootItem.innerText = rootStyle
             }
         }
-        //兼容UC结束
+        // UC browser compatibility end
         docEl.style.fontSize = rem + "px";
     };
     refreshRem();
 
     win.addEventListener("resize", function () {
-        clearTimeout(tid); //防止执行两次
+        clearTimeout(tid); // Prevent execution twice
         tid = setTimeout(refreshRem, 300);
     }, false);
 
     win.addEventListener("pageshow", function (e) {
-        if (e.persisted) { // 浏览器后退的时候重新计算
+        if (e.persisted) { // Recalculate when the browser goes back
             clearTimeout(tid);
             tid = setTimeout(refreshRem, 300);
         }

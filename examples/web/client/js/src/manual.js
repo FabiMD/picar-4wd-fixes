@@ -19,26 +19,26 @@ Manual.mileageObj = {};
 Manual.mileageValue = 0;
 
 Manual.sendValue = {
-    'RC':'off',  // remote control  rest
-    'GS': "off", // 巡线模块  'off'
-    'RD':'off',  // 雷达  'off'
-    'OA':'off',  // 避障  'off'
-    'OF':'off',  // 跟随  'off'
-    'TL':['off',400], // 巡线value  ['off', 400]
-    'CD':['off',110], // 悬崖  ['off',110]
-    'PW':50,  // 调速功率  50
-    'SR':0,  // 复位  off
-    'ST':'off', // 系统信息  'off'
-    'US':['off',0],  // 超声波设置  ['off', 0]
-    'MS':['off',4,0] // 测速设置  ['off', 1, 0]
+    'RC':'off',  // remote control rest
+    'GS': "off", // line-following module 'off'
+    'RD':'off',  // radar 'off'
+    'OA':'off',  // obstacle avoidance 'off'
+    'OF':'off',  // following 'off'
+    'TL':['off',400], // line-following value ['off', 400]
+    'CD':['off',110], // cliff detection ['off', 110]
+    'PW':50,  // speed adjustment power 50
+    'SR':0,  // reset 'off'
+    'ST':'off', // system information 'off'
+    'US':['off',0],  // ultrasonic settings ['off', 0]
+    'MS':['off',4,0] // speed measurement settings ['off', 4, 0]
 }
 
 /*
     send_dict = {
-        'GS':[0,0,0],  // 巡线value
-        'US':[angle, distance], // 超声波value
-        'MS':[0,min], // 测速值
-        'ST':{'a':1} // 系统信息value
+        'GS':[0,0,0],  // line-following value
+        'US':[angle, distance], // ultrasonic value
+        'MS':[0,min], // speed measurement value
+        'ST':{'a':1} // system information value
     } 
 */
 

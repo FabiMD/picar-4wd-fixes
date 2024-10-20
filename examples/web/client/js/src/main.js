@@ -21,9 +21,8 @@ Main.PAGES = {
 	'setting': Setting
 }
 
-
-// Main.lastPage = {} //记录上次打开页面
-Main.lastPage = [] //记录上次打开页面
+// Main.lastPage = {} // Record the last opened page
+Main.lastPage = [] // Record the last opened page
 /**
  * get the height of MainContent and blockly element
  */
@@ -43,9 +42,10 @@ Main.initResize = function () {
 
 
 /**
- * 选编程渲染页面
- * @param {string} page 要渲染的页面
+ * Select and render the page
+ * @param {string} page The page to render
  */
+
 
 Main.renderPage = function (page) {
 	if (Main.page) {
@@ -58,8 +58,7 @@ Main.renderPage = function (page) {
 	}
 	Main.page.show();
 }
-
-//返回上一页
+// Return to the previous page
 Main.back = function () {
     // Main.page = Main.PAGES[(Main.lastPage[Main.lastPage.length - 1].id)];
     // if (window.sessionStorage) {
