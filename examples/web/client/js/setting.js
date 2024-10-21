@@ -2,17 +2,17 @@ var Setting = {};
 
 Setting.id = "setting";
 
-// 超声波设置
+// Ultrasonic settings
 Setting.ultrasonic = {};
 
 Setting.showFlag = false;
 
-
 Setting.ultrasonic.show = true;
-// 车轮速度设置
+// Wheel speed settings
 Setting.wheel = {};
 
-// 巡线设置
+// Line following settings
+
 Setting.grayscale = {};
 
 Setting.grayscale.show = false;
